@@ -14,10 +14,9 @@
 
 #### off selinux <br/>
 `nano /etc/sysconfig/selinux` <br/>
-<dl>
-	<dd>SELINUX=disabled</dd>
-</dl>
-
+```
+	SELINUX=disabled
+```
 `setenforce 0`<br/>
 `reboot`<br/>
 
@@ -65,10 +64,12 @@
 `yum install zabbix-server-pgsql zabbix-web-pgsql zabbix-agent`<br/>
 `zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | sudo -u zabbix psql zabbix`<br/>
 `nano /etc/zabbix/zabbix_server.conf`<br/>
+```
 	DBHost=localhost<br/>
 	DBName=zabbix<br/>
 	DBUser=zabbix<br/>
 	DBPassword=zabbix<br/>
+```
 `nano /etc/httpd/conf.d/zabbix.conf`<br/>
 ```
 	#change <IfModule mod_php5.c> to <IfModule mod_php7.c><br/>
