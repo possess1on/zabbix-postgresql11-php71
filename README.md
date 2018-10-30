@@ -14,7 +14,9 @@
 
 #### off selinux <br/>
 `nano /etc/sysconfig/selinux` <br/>
-	SELINUX=disabled<br/>
+```
+SELINUX=disabled<br/>
+```
 `setenforce 0`<br/>
 `reboot`<br/>
 
