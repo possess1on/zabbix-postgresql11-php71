@@ -1,6 +1,7 @@
 # zabbix-postgresql11-php71
 
-#Start
+###Start
+
 yum clean all
 yum -y update
 
