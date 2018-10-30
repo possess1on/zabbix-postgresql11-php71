@@ -75,7 +75,6 @@
 	#change <IfModule mod_php5.c> to <IfModule mod_php7.c><br/>
 	php_value date.timezone Asia/Almaty<br/>
 ```
-	
 `systemctl restart zabbix-server zabbix-agent httpd`<br/>
 `systemctl enable zabbix-server zabbix-agent httpd`<br/>
 
