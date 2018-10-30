@@ -2,21 +2,21 @@
 
 #### Start<br/>
 `yum clean all`<br/>
-`yum -y update`
+`yum -y update`<br/>
 
-#nano & net-tools
-yum -y install nano
-yum -y install net-tools
+#### nano & net-tools<br/>
+`yum -y install nano`<br/>
+`yum -y install net-tools`<br/>
 
-#off firewalld
-systemctl stop firewalld 
-systemctl disable firewalld
+#### off firewalld <br/>
+`systemctl stop firewalld` <br/>
+`systemctl disable firewalld` <br/>
 
-#off selinux
-nano /etc/sysconfig/selinux
-SELINUX=disabled
-setenforce 0
-reboot
+#### off selinux <br/>
+`nano /etc/sysconfig/selinux` <br/>
+	SELINUX=disabled<br/>
+`setenforce 0`<br/>
+`reboot`<br/>
 
 #apache
 yum install -y httpd
