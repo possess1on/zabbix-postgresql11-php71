@@ -15,9 +15,8 @@
 #### off selinux <br/>
 `nano /etc/sysconfig/selinux` <br/>
 <dl>
-	<dd>SELINUX=disabled<dd>
+	<dd>SELINUX=disabled</dd>
 </dl>
-
 `setenforce 0`<br/>
 `reboot`<br/>
 
@@ -44,13 +43,15 @@
 `systemctl enable postgresql-11` <br/>
 `systemctl start postgresql-11` <br/>
 `nano /var/lib/pgsql/11/data/pg_hba.conf` <br/>
+<dl>
 	# "local" is for Unix domain socket connections only <br/>
 	local   all             all                                     trust <br/>
 	# IPv4 local connections:<br/>
 	host    all             all             127.0.0.1/32            trust<br/>
 	# IPv6 local connections:<br/>
 	host    all             all             ::1/128                 trust<br/>
-	
+</dl>
+
 systemctl reload postgresql-11
 
 #create user and base zabbix postgresql
