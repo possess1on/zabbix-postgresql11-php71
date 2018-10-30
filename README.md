@@ -53,27 +53,27 @@
 	host    all             all             ::1/128                 trust <br/>
 </dl>
 
-systemctl reload postgresql-11
+`systemctl reload postgresql-11` <br/>
 
-#create user and base zabbix postgresql
-su - postgres
-createuser zabbix -P
-createdb -O zabbix zabbix
-exit
+#### create user and base zabbix postgresql<br/>
+`su - postgres`<br/>
+`createuser zabbix -P`<br/>
+`createdb -O zabbix zabbix`<br/>
+`exit`<br/>
 
-#install zabbix
-rpm -i https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm
-yum install zabbix-server-pgsql zabbix-web-pgsql zabbix-agent
-zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | sudo -u zabbix psql zabbix
-nano /etc/zabbix/zabbix_server.conf
-	DBHost=localhost
-	DBName=zabbix
-	DBUser=zabbix
-	DBPassword=zabbix
-nano /etc/httpd/conf.d/zabbix.conf
-	#change <IfModule mod_php5.c> to <IfModule mod_php7.c>
-	php_value date.timezone Asia/Almaty
-systemctl restart zabbix-server zabbix-agent httpd
-systemctl enable zabbix-server zabbix-agent httpd
+#### install zabbix<br/>
+`rpm -i https://repo.zabbix.com/zabbix/4.0/rhel/7/x86_64/zabbix-release-4.0-1.el7.noarch.rpm`<br/>
+`yum install zabbix-server-pgsql zabbix-web-pgsql zabbix-agent`<br/>
+`zcat /usr/share/doc/zabbix-server-pgsql*/create.sql.gz | sudo -u zabbix psql zabbix`<br/>
+`nano /etc/zabbix/zabbix_server.conf`<br/>
+	DBHost=localhost<br/>
+	DBName=zabbix<br/>
+	DBUser=zabbix<br/>
+	DBPassword=zabbix<br/>
+`nano /etc/httpd/conf.d/zabbix.conf`<br/>
+	#change <IfModule mod_php5.c> to <IfModule mod_php7.c><br/>
+	php_value date.timezone Asia/Almaty<br/>
+`systemctl restart zabbix-server zabbix-agent httpd`<br/>
+`systemctl enable zabbix-server zabbix-agent httpd`<br/>
 
-#Finish go to http://ip_addr/zabbix
+#### Finish go to http://ip_addr/zabbix<br/>
