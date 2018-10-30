@@ -1,9 +1,8 @@
 # zabbix-postgresql11-php71
 
-###Start
-
-yum clean all
-yum -y update
+#### Start<br/>
+`yum clean all`<br/>
+`yum -y update`
 
 #nano & net-tools
 yum -y install nano
